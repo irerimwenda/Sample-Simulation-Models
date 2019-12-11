@@ -1,0 +1,138 @@
+body {
+    background-color: lightgray;
+    -webkit-user-select: none !important;
+    /* turning off text selection  / Webkit */
+    -moz-user-select: none !important;
+    /* Firefox */
+    -ms-user-select: none !important;
+    /* IE 10  */
+    -o-user-select: none !important;
+    /* Opera */
+    user-select: none !important;
+}
+
+#content {
+    margin-top: 20px;
+}
+
+#content > h3 {
+    margin-left: 70px;
+    margin-top: 5px;
+    margin-bottom: 8pt;
+}
+
+#content > p {
+    text-align: center;
+}
+
+#canvas-holder {
+    /**float: left;**/
+    /**margin-right: 10px;**/
+    display: -webkit-flex;
+    justify-content: center;
+    margin: 15px;
+    border: o.5px dashed black;
+    background-color: white;
+}
+
+canvas {
+    display: block;
+}
+
+#tools {
+    float: left;
+    background-color: white;
+    border: 1px solid black;
+    margin: 0pt;
+    padding: 8px
+}
+
+#tools h3 {
+    margin-top: 0pt;
+    margin-bottom: 8pt;
+}
+
+#help-content {
+    display: none;
+    position: fixed;
+    left: 1cm;
+    right: 1cm;
+    top: 38px;
+    bottom: 1cm;
+    z-index: 20;
+    max-width: 800px;
+    border: 3px solid #740b0b;
+    color: #740b0b;
+    background-color: #F5F5DC;
+    padding: 8px 15px;
+    overflow: auto;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
+#help-content p {
+    text-indent: 25px;
+}
+
+#help-icon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 5
+}
+
+#hide-help-icon {
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 50;
+    display: none
+}
+
+#helpBG {
+    display: none;
+    position: fixed;
+    top: 0pt;
+    left: 0pt;
+    bottom: 0pt;
+    right: 0pt;
+    z-index: 10;
+    background-color: white;
+    opacity: 0.75;
+}
+
+label {
+    margin-left: 20px;
+}
+
+.stick {
+  border-radius: 100%;
+  background: #09f;
+  width: 80px;
+  position: fixed;
+  opacity: 0.8;
+  z-index: 8888;
+  right: 100px;
+  bottom: 100px;
+}
+
+.joy {
+  border-radius: 100%;
+  background: #f90;
+  position: absolute;
+  opacity: 0.8;
+  width: 50px;
+}
+
+#grand {
+  position: absolute;
+  width: 120px;
+  height: 150px;
+  background: #333;
+  right: 1000px;
+  top: 800px;
+}

@@ -4,8 +4,13 @@
 		<title>Simulation Models</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<style>
-			body { margin: 0; }
-			canvas { width: 100%; height: 100% }
+			body { margin: 0 auto; }
+			canvas { 
+				 width: 100%;
+				 height: 100%;
+				 margin-left: 20%;
+				 margin-top: 20px;
+				 }
 		</style>
 	</head>
 	<body>
@@ -17,10 +22,10 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav">
-					<a class="nav-item nav-link active" href="index.html">Cube <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link" href="index.html">Cube <span class="sr-only">(current)</span></a>
 					<a class="nav-item nav-link" href="#">PLain Apparatus</a>
 					<a class="nav-item nav-link" href="#">Elements</a>
-					<a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Interactive</a>
+					<a class="nav-item nav-link" href="interactive.html">Interactive</a>
 					</div>
 				</div>
 			</nav>
@@ -48,7 +53,8 @@
 				scene.add( mesh );
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				// renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize(800, 400);
 				document.body.appendChild( renderer.domElement );
 
 			}
