@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>PLAYGROUND</title>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+                <a class="navbar-brand" href="#">Interactive Models</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="index.html">Cube <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="plain-apparatus.html">PLain Apparatus</a>
+                    <a class="nav-item nav-link" href="elements.html">Elements</a>
+                    <a class="nav-item nav-link" href="interactive.html">Interactive</a>
+                    </div>
+                </div>
+            </nav>
+            <canvas id="image-loader"></canvas>
+        </div>
+    </body>
+
+    <script type="module"> 
+        // import 
+        import * as THREE from './build/three.module.js'
+
+        // instanciate a loader
+        var loader = new THREE.ImageLoader()
+
+        // load an image resource
+        loader.load(
+
+            //resource URL
+            'custom-images/water.jpg',
+
+            //onLoad callback
+            function (image) {
+                var canvas = document.getElementById('image-loader');
+                var context = canvas.getContext('2d');
+
+                context.drawImage(image, 100, 100);
+            },
+
+            undefined,
+
+            //onError callback 
+            function() {
+                console.error('Error!')
+            }
+
+        );
+    </script>
+</html>

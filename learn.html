@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn Basics</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+    <script>
+    
+    //create a scene ~ where all objects and light go
+    var scene = new THREE.Scene();
+
+    //create a camera
+    //perspective camera ~ mimic real world scene
+    var camera = new THREE.PerspectiveCamera(
+        75, // field of view
+        window.innerWidth/window.innerHeight, //aspect ratio
+        0.1,
+        1000
+    );
+
+    //renderer
+    var renderer = new THREE.WebGLRenderer({
+        antialias: true
+    });
+
+    renderer.setClearColor("#e5e5e5");
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    //append child to the renderer DOM element
+    document.body.appendChild(renderer.domElement);
+
+    window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+
+        camera.updateProjectionMatrix();
+    })
+
+    renderer.render(scene, camera);
+
+    //create a sphere
+    var geometry = new THREE.SphereGeometry(1, 10, 10);
+    //material
+    var material = new THREE.MeshLambertMaterial({
+        color: 0xFFCC00
+    });
+
+    //combine the two in a mesh
+    var mesh = new THREE.Mesh(geometry, material)
+
+    scene.add(mesh);
+    
+    </script>
+</body>
+</html>
